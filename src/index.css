@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family:'Share Tech Mono';
+  src: local('Share Tech Mono'), url(./fonts/ShareTechMono-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family:'Disposable Droid BB';
+  src: local('Disposable Droid BB'), url(./fonts/DisposableDroidBB.ttf) format('truetype');
+}
+
+@font-face {
+  font-family:'Android 7';
+  src: local('Android 7'), url(./fonts/android_7.ttf) format('truetype');
+}
+
+@font-face {
+  font-family:'SF TransRobotics';
+  src: local('SF TransRobotics'), url(./fonts/SFTransRobotics.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,8 +31,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #303030;
-  color: #FFFFFF;
 }
 
 code {
