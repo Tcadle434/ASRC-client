@@ -6,16 +6,11 @@ import { SectionTitle } from "../../components/sectionTitle";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-import { GrMoney } from "react-icons/gr";
-import { FaRobot, FaGem, FaTshirt, FaShoppingBag, FaGift } from "react-icons/fa";
+import { FaRobot, FaGem, FaShoppingBag, FaGift } from "react-icons/fa";
 import { IoLogoGameControllerB } from "react-icons/io";
-import { GiToyMallet, GiTwoCoins } from "react-icons/gi";
+import { GiTwoCoins } from "react-icons/gi";
 import { GrThreeD } from "react-icons/gr";
 
-import BotOneImg from "../../assets/illustrations/bot_1.png";
-import BotTwoImg from "../../assets/illustrations/bot_2.png";
-import BotThreeImg from "../../assets/illustrations/bot_3.png";
-import BotFourImg from "../../assets/illustrations/bot_4.png";
 
 const RoadmapContainer = styled(Element)`
   width: 100%;
@@ -24,7 +19,8 @@ const RoadmapContainer = styled(Element)`
   flex-direction: column;
   align-items: center;
   background: #000000;
-  padding: 10px; 0
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.92);
 
 `;
 
@@ -46,7 +42,7 @@ const DetailsHeader = styled.h3`
   font-size: 26px;
 
     @media screen and (max-width: 480px) {
-
+      font-size: 20px;
     }
 `;
 
@@ -55,52 +51,25 @@ const Details = styled.p`
   font-size: 20px!important;
 
     @media screen and (max-width: 480px) {
-
+      font-size: 16px!important;
     }
 `;
 
-const RobotRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const BaseRobotImg = styled.img`
-  width: 11em;
-  height: 15em;
-  align-items: center;
-  margin: 40px;
-
-  @media screen and (max-width: 480px) {
-    width: 3em;
-    height: 4em;
-    margin: 20px;
-  }
-
-`;
 
 const RobotImg = styled(FaRobot)`
   color: #000000!important;
 `;
 
-const MoneyImg = styled(GrMoney)`
-`;
 
 const RareImg = styled(FaGem)`
   color: #000000!important;
 `;
 
-const MerchImg = styled(FaTshirt)`
-  color: #000000!important;
-`;
 
 const GameImg = styled(IoLogoGameControllerB)`
   color: #000000!important;
 `;
 
-const VoteImg = styled(GiToyMallet)`
-  color: #000000!important;
-`;
 
 const MarketImg = styled(FaShoppingBag)`
   color: #000000!important;

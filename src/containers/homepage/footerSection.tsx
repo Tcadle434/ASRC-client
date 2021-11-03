@@ -2,14 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Element } from "react-scroll";
 import { ColoredLine } from "../../components/line";
-import { Button } from "../../components/button";
-import { theme } from "../../theme";
 import DiscordImg from "../../assets/illustrations/discord.png";
 import TwitterImg from "../../assets/illustrations/twitter.png";
+import { useMediaQuery } from "react-responsive";
 
 const FooterContainer = styled(Element)`
   width: 100%;
-  min-height: 300px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,8 +16,12 @@ const FooterContainer = styled(Element)`
 `;
 
 const FooterRow = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
+  margin-right: 1%;
+  margin-left: 1%;
+
   @media screen and (max-width: 480px) {
     display: inline-block;
     margin-bottom: 2em;
@@ -28,9 +31,17 @@ const FooterRow = styled.div`
 const FooterSubContainer = styled.div`
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   width: 33.33%;
-  padding: 10px 150px;
+  padding: 10px 50px;
+
+  @media screen and (max-width: 1280px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
 
   @media screen and (max-width: 480px) {
     display: flex;
@@ -39,20 +50,6 @@ const FooterSubContainer = styled.div`
     width: 100%;
     padding: 0;
 }
-`;
-
-const FooterTitle = styled.h1`
-  font-size: 32px;
-  font-weight: 500;
-  color: ${theme.primary};
-  font-family: Share Tech Mono;
-  text-align: center;
-
-
-  @media screen and (max-width: 480px) {
-  text-align: center;
-  font-size: 36px;
-  }
 `;
 
 const Details = styled.p`
@@ -73,7 +70,7 @@ const Marketplaces = styled.p`
   color: #FFFFFF;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   font-family: Share Tech Mono;
   text-align: center;
   margin-block-start: 0.3em;
@@ -84,20 +81,14 @@ const Marketplaces = styled.p`
 `;
 
 const SocialMediaImg = styled.img`
-  width: 12em;
-  height: 9em;
+  width: 8em;
+  height: 6em;
 
   @media screen and (max-width: 480px) {
   width: 6em;
   height: 5em;
   align-items: center;
 }
-`;
-
-
-const SocialMediaRow = styled.div`
-  display: flex;
-  flex-direction: row;
 `;
 
 const ButtonWrap = styled.button`
@@ -108,6 +99,7 @@ const ButtonWrap = styled.button`
   border: none;
   transition: all 220ms ease-in-out;
   cursor: pointer;
+  padding: 15px 15px;
 
   &:hover {
     border: none;
@@ -128,13 +120,13 @@ const ButtonWrap = styled.button`
 
 
 export function FooterSection(props) {
+  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
 
   return (
     <FooterContainer>
     <ColoredLine />
     <FooterRow>
-      <FooterSubContainer>
-        <FooterTitle> Follow Us </FooterTitle>
+    <FooterSubContainer>
           <ButtonWrap>
             <a href = "https://discord.gg/Vk26nVgTMk">
             <SocialMediaImg src={DiscordImg} />
@@ -145,16 +137,19 @@ export function FooterSection(props) {
             <SocialMediaImg src={TwitterImg} />
             </a>
           </ButtonWrap>
-        </FooterSubContainer>
+    </FooterSubContainer>
 
-        <FooterSubContainer>
-          <FooterTitle>  </FooterTitle>
-          <Details> ©2021, Anti Social Robot Club. All Rights Reserved </Details>
-        </FooterSubContainer>
+    { !isMobile ? (
+      <FooterSubContainer>
+            <Details> ©2021, Anti Social Robot Club. All Rights Reserved </Details>
+      </FooterSubContainer>
+    ): (
+      <FooterSubContainer>
+      </FooterSubContainer>
+    )}
 
-        <FooterSubContainer>
-          <FooterTitle> Marketplaces </FooterTitle>
 
+    <FooterSubContainer>
           <a href = "https://solanart.io/collections/antisocialrobots">
           <ButtonWrap>
             <Marketplaces> Solanart </Marketplaces>
@@ -178,8 +173,7 @@ export function FooterSection(props) {
             <Marketplaces> Magic Eden </Marketplaces>
           </ButtonWrap>
           </a>
-
-        </FooterSubContainer>
+      </FooterSubContainer>
       </FooterRow>
     </FooterContainer>
 

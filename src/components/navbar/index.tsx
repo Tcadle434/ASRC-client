@@ -4,7 +4,7 @@ import { Logo } from "../logo";
 import { Button } from "../button";
 import { scroller } from "react-scroll";
 import { Link } from "react-router-dom";
-
+import pdfFile from '../pdf/litepaper.pdf';
 
 const NavbarContainer = styled.div`
   width: 100%;
@@ -47,12 +47,21 @@ export function Navbar(props) {
       </BrandContainer>
 
       <AccessibilityContainer>
+        <Link to="/">
+          <Button small> Home </Button>
+          </Link>
         <Link to="/mybots">
           <Button small> My Bots </Button>
         </Link>
-        <Button small onClick={scrollToAboutSection}> Litepaper </Button>
-        <Button small onClick={scrollToFeaturesSection}> Gitbook </Button>
-        <Button small orange onClick={scrollToFeaturesSection}> Rarities </Button>
+        <a href = {pdfFile}>
+          <Button small> Litepaper </Button>
+        </a>
+        <a href = "https://antisocialrobotclub.gitbook.io/battle-arena-tutorial/">
+          <Button small onClick={scrollToFeaturesSection}> Gitbook </Button>
+        </a>
+        <a href = "https://howrare.is/antisocialrobotclub">
+          <Button small orange onClick={scrollToFeaturesSection}> Rarities </Button>
+        </a>
       </AccessibilityContainer>
     </NavbarContainer>
   );
