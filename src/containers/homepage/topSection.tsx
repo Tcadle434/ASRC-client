@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme } from "../../theme";
 import BackgroundImg from "../../assets/pictures/background.png";
 import BackgroundImgMobile from "../../assets/pictures/background_mobile.png";
-import { Navbar } from "../../components/navbar";
+import { OurNavbar } from "../../components/navbar";
 import { Element } from "react-scroll";
 import PromoVid from "../../assets/videos/2021_0929_teaser_final.mov";
 
@@ -120,7 +120,7 @@ export function TopSection(props) {
   <Element name="topSection">
     <TopContainer>
       <BackgroundFilter>
-      <Navbar />
+      <OurNavbar />
       <TextContainer>
         <SloganText> BATTLE & EARN </SloganText>
         <SubText> Own a bot and fight your way to the top in Solana’s Robot Ruled Metaverse </SubText>

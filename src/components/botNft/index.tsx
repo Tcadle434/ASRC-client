@@ -7,7 +7,8 @@ const BotContainer = styled.div`
   flex-direction: column;
   padding: 10px;
   margin: 20px;
-  background-color: #383838;
+  background-color: #000000;
+  background-image: radial-gradient(closest-corner, #16B1F3 0%, #000000 82%);
   border: 2px solid #FFFFFF;
   border-radius: 20px;
   width: 475px;
@@ -45,7 +46,7 @@ const MetadataContainer = styled.div`
   flex-direction: column;
   min-height: 75px;
   min-width: 120px;
-  background-color: rgba(22, 177, 243, 0.87);
+  background-color: #16B1F3;
 `;
 
 const MetadataRow = styled.div`

@@ -57,8 +57,9 @@ const BotContainer = styled.div`
 
 const DataRow = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
 
   @media screen and (max-width: 480px) {
     min-height: 1800px;
@@ -97,6 +98,7 @@ const MetadataWrapRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: center;
 
   @media screen and (max-width: 480px) {
     min-height: 1800px;
@@ -145,6 +147,7 @@ type BotType = {
 
 const Home = (props: HomeProps) => {
   const [balance, setBalance] = useState<number>();
+  const [robotCount, setRobotCount] = useState<number>();
   const [isLoaded, setIsLoaded] = useState(false);
   const [pngUriList, setPngUriList] = useState<any[]>();
   const [botMetadataList, setBotMetadataList] = useState<BotType[]>();
@@ -249,6 +252,8 @@ const Home = (props: HomeProps) => {
       console.log("token addresses")
       console.log(tokenAddresses)
 
+      var numRobos = 0
+
       // if (botTokens) {
       for (const id of botAddresses) {
         setIsLoaded(false);
@@ -286,7 +291,8 @@ const Home = (props: HomeProps) => {
         )
 
         png2DList.push(arweaveData.image.toString())
-
+        numRobos = numRobos + 1
+        setRobotCount(numRobos)
         setBotMetadataList(botData)
         setPngUriList(png2DList)
     }
@@ -314,6 +320,9 @@ const Home = (props: HomeProps) => {
           )}
 
           {wallet && <DataContainer>Balance: {(balance || 0).toLocaleString()} SOL</DataContainer>}
+
+          {wallet && <DataContainer>Total Robots: {(robotCount || 0).toLocaleString()}</DataContainer>}
+
           </DataRow>
           {wallet && !isLoaded && <CircularProgress />}
 

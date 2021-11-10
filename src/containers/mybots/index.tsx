@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import styled from "styled-components";
 
 import Home from "./Home";
-import { Navbar } from "../../components/navbar";
+import { OurNavbar } from "../../components/navbar";
 
 import * as anchor from "@project-serum/anchor";
 import { clusterApiUrl } from "@solana/web3.js";
@@ -28,7 +28,7 @@ const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.92);
+  background-color: rgba(0, 0, 0, 0.97);
   min-height: 1200px;
 
   @media screen and (max-width: 480px) {
@@ -86,7 +86,7 @@ export function MyBots(props) {
         <ConnectionProvider endpoint={endpoint}>
           <WalletProvider wallets={wallets} autoConnect={true}>
             <WalletDialogProvider>
-            <Navbar />
+            <OurNavbar />
             <TopContainer>
             <Home
               connection={connection}

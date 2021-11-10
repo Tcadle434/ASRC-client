@@ -11,7 +11,9 @@ const TeamSectionContainer = styled(Element)`
   min-height: 1000px;
   display: flex;
   flex-direction: column;
-  background: rgba(22, 177, 243, 0.95);
+  background-color: #d3d3d3;
+  background-image: linear-gradient(145deg, #d3d3d3 0%, #16B1F3 74%);
+
 `;
 
 export const TeamTitle = styled.h1`

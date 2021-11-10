@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Element } from "react-scroll";
+import { useMediaQuery } from "react-responsive";
 import { theme } from "../../theme";
 import { OurBot } from "../../components/ourBot";
 import FirstBot from "../../assets/illustrations/101.png";
@@ -9,20 +10,15 @@ import ThirdBot from "../../assets/illustrations/1618.png";
 import FourthBot from "../../assets/illustrations/3519.png";
 import UsbUp from "../../assets/illustrations/usb_up_no_background.png";
 import UsbDown from "../../assets/illustrations/usb_view_no_back.png";
-import ThreeDMovie from "../../assets/videos/MOV_1838.mov";
+import ThreeDMoviePunch from "../../assets/videos/Tank_360_punching.mp4";
 
 
 const AboutContainer = styled(Element)`
   width: 100%;
-  min-height: 2200px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.92);
+  background-color: rgba(0, 0, 0, 0.97);
 
-  @media screen and (max-width: 480px) {
-    min-height: 1800px;
-
-}
 `;
 
 export const AboutTitle = styled.h1`
@@ -60,7 +56,6 @@ const BotContainerRow = styled.div`
   margin-bottom: 5%;
 
   @media screen and (max-width: 480px) {
-    display: inline-block;
 }
 `;
 
@@ -110,6 +105,7 @@ const Video = styled.video`
 @media screen and (max-width: 480px) {
   width: 100%;
   margin: 0;
+  height: 25em;
 }
 
 @media screen and (max-width: 1200px) {
@@ -125,20 +121,38 @@ const styles = {
 };
 
 export function AboutSection(props) {
+  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
+
   return (
     <AboutContainer name="aboutSection">
       <AboutTitle> Origin Story </AboutTitle>
       <AboutContent> Although originally designed by humans, these bots turned to violence and quickly managed to overthrow their flesh covered overlords. This became known in legend as <span style={styles.blue}>R-DAY</span>. In the wake of victory, they took parts of the human brain and infused it into their own motherboards, deeming them the first robots with emotions </AboutContent>
       <AboutContent> This decision was followed by immediate regret as they were exposed to the realm of pain and sadness that burdens all living creatures. In an attempt to avoid these new feelings, they now wander the outskirts of the metaverse in isolation</AboutContent>
 
-      <UsbContainer>
-      <BotContainerRow>
-        <OurBot imgUrl={FirstBot} />
-        <OurBot imgUrl={SecondBot} />
-        <OurBot imgUrl={ThirdBot} />
-        <OurBot imgUrl={FourthBot} />
-      </BotContainerRow>
-      </UsbContainer>
+
+      { !isMobile ? (
+        <UsbContainer>
+        <BotContainerRow>
+          <OurBot imgUrl={FirstBot} />
+          <OurBot imgUrl={SecondBot} />
+          <OurBot imgUrl={ThirdBot} />
+          <OurBot imgUrl={FourthBot} />
+        </BotContainerRow>
+        </UsbContainer>
+      ): (
+        <UsbContainer>
+        <BotContainerRow>
+          <OurBot imgUrl={FirstBot} />
+          <OurBot imgUrl={SecondBot} />
+        </BotContainerRow>
+
+        <BotContainerRow>
+          <OurBot imgUrl={ThirdBot} />
+          <OurBot imgUrl={FourthBot} />
+        </BotContainerRow>
+        </UsbContainer>
+      )}
+
 
       <AboutTitle> 3D Upgrade </AboutTitle>
       <AboutContent> Ownership of one of the original 4,444 2D bots makes you elligible for a USB airdrop, giving you the option of upgrading your bot to a more menacing 3D version. When the robots undergo the upgrade, the 2D bot is <span style={styles.orange}>burned</span> thus making them <span style={styles.blue}>deflationary</span> </AboutContent>
@@ -151,7 +165,7 @@ export function AboutSection(props) {
       <AboutContent> The 3D robots will be the playable avatars in the ASRC metaverse, whereas the 2D bots will serve as staking multipliers for earning $ROBO, our in-game currency</AboutContent>
 
       <Video loop autoPlay muted>
-        <source src={ThreeDMovie} type="video/mp4" />
+        <source src={ThreeDMoviePunch} type="video/mp4" />
       </Video>
 
     </AboutContainer>

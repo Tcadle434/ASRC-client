@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Logo } from "../logo";
 import { Button } from "../button";
-import { scroller } from "react-scroll";
 import { Link } from "react-router-dom";
 import pdfFile from '../pdf/litepaper.pdf';
+import { useMediaQuery } from "react-responsive";
 
 const NavbarContainer = styled.div`
   width: 100%;
@@ -32,13 +32,8 @@ const AccessibilityContainer = styled.div`
 `;
 
 
-export function Navbar(props) {
-  const scrollToAboutSection= () => {
-    scroller.scrollTo("aboutSection", { smooth: true, duration: 1500 })
-  }
-  const scrollToFeaturesSection= () => {
-    scroller.scrollTo("featuresSection", { smooth: true, duration: 1500 })
-  }
+export function OurNavbar(props) {
+  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
 
   return (
     <NavbarContainer>
@@ -46,24 +41,43 @@ export function Navbar(props) {
         <Logo inline />
       </BrandContainer>
 
-      <AccessibilityContainer>
-        <Link to="/">
-          <Button small> Home </Button>
+      { isMobile ? (
+        <AccessibilityContainer>
+          <a href = {pdfFile}>
+            <Button small> Litepaper </Button>
+          </a>
+          <a href = "https://antisocialrobotclub.gitbook.io/battle-arena-tutorial/">
+            <Button small> Gitbook </Button>
+          </a>
+          <a href = "https://howrare.is/antisocialrobotclub">
+            <Button small orange> Rarities </Button>
+          </a>
+        </AccessibilityContainer>
+
+      ): (
+        <AccessibilityContainer>
+          <Link to="/">
+            <Button small> Home </Button>
+            </Link>
+          <Link to="/mybots">
+            <Button small> My Bots </Button>
           </Link>
-        <Link to="/mybots">
-          <Button small> My Bots </Button>
-        </Link>
-        <a href = {pdfFile}>
-          <Button small> Litepaper </Button>
-        </a>
-        <a href = "https://antisocialrobotclub.gitbook.io/battle-arena-tutorial/">
-          <Button small onClick={scrollToFeaturesSection}> Gitbook </Button>
-        </a>
-        <a href = "https://howrare.is/antisocialrobotclub">
-          <Button small orange onClick={scrollToFeaturesSection}> Rarities </Button>
-        </a>
-      </AccessibilityContainer>
+          <a href = {pdfFile}>
+            <Button small> Litepaper </Button>
+          </a>
+          <a href = "https://antisocialrobotclub.gitbook.io/battle-arena-tutorial/">
+            <Button small> Gitbook </Button>
+          </a>
+          <a href = "https://howrare.is/antisocialrobotclub">
+            <Button small orange> Rarities </Button>
+          </a>
+        </AccessibilityContainer>
+      )}
+
     </NavbarContainer>
+
+
   );
+
 
 }

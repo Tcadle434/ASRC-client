@@ -173,7 +173,8 @@ export function FooterSection(props) {
             <Marketplaces> Magic Eden </Marketplaces>
           </ButtonWrap>
           </a>
-      </FooterSubContainer>
+    </FooterSubContainer>
+
       </FooterRow>
     </FooterContainer>
 

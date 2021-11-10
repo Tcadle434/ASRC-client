@@ -32,8 +32,8 @@ const ButtonWrapper = styled.button`
 }
 
   @media screen and (max-width: 480px) {
-  font-size: 9px;
-  padding: 10px 14px;
+  font-size: 12px;
+  padding: 2px 10px;
 }
 `;
 
