@@ -101,9 +101,9 @@ export function RoadmapSection(props) {
           iconStyle={{ background: '#16B1F3', color: '#fff' }}
           icon={<RobotImg />}
         >
-          <DetailsHeader className="vertical-timeline-element-title">R-Day</DetailsHeader>
+          <DetailsHeader className="vertical-timeline-element-title"><del>R-Day</del></DetailsHeader>
           <Details>
-            The day of the Robot Uprising. October 1st the original 4,444 2D bots are available to mint for 0.15 SOL
+            <del>The day of the Robot Uprising. October 1st the original 4,444 2D bots are available to mint for 0.15 SOL </del>
           </Details>
         </StyledVerticalTimelineElement>
 
@@ -114,9 +114,9 @@ export function RoadmapSection(props) {
           iconStyle={{ background: '#16B1F3', color: '#fff' }}
           icon={<MarketImg />}
         >
-          <DetailsHeader className="vertical-timeline-element-title">Secondary Marketplace</DetailsHeader>
+          <DetailsHeader className="vertical-timeline-element-title"><del>Secondary Marketplace</del></DetailsHeader>
           <Details>
-             Bots listed on all major Solana Marketplaces, including Solanart, Digital Eyes, FTX_US, and Magic Eden
+             <del>Bots listed on all major Solana Marketplaces, including Solanart, Digital Eyes, FTX_US, and Magic Eden</del>
           </Details>
         </StyledVerticalTimelineElement>
 
@@ -127,9 +127,9 @@ export function RoadmapSection(props) {
           iconStyle={{ background: '#16B1F3', color: '#fff' }}
           icon={<RareImg />}
         >
-          <DetailsHeader className="vertical-timeline-element-title">Rarities Released</DetailsHeader>
+          <DetailsHeader className="vertical-timeline-element-title"><del>Rarities Released</del></DetailsHeader>
           <Details>
-            Rarity Chart will be released, as well as an official ranking system on HowRare.is
+          <del>Rarity Chart will be released, as well as an official ranking system on HowRare.is</del>
           </Details>
         </StyledVerticalTimelineElement>
 
@@ -140,9 +140,9 @@ export function RoadmapSection(props) {
           iconStyle={{ background: '#16B1F3', color: '#fff' }}
           icon={<GiftImg />}
         >
-          <DetailsHeader className="vertical-timeline-element-title">USB Airdrop</DetailsHeader>
+          <DetailsHeader className="vertical-timeline-element-title"><del>USB Airdrop</del></DetailsHeader>
           <Details>
-            USB NFT Airdropped to all bot holders with DELISTED bots. Needed to initiate the 3D upgrade
+            <del>USB NFT Airdropped to all bot holders with DELISTED bots. Needed to initiate the 3D upgrade</del>
           </Details>
         </StyledVerticalTimelineElement>
 
@@ -179,7 +179,7 @@ export function RoadmapSection(props) {
           iconStyle={{ background: '#16B1F3', color: '#fff' }}
           icon={<GameImg />}
         >
-          <DetailsHeader className="vertical-timeline-element-title">Battle Arena </DetailsHeader>
+          <DetailsHeader className="vertical-timeline-element-title">Battle Arena</DetailsHeader>
           <Details>
             Beta Launch of the Battle Arena, A simulated, tournament style competition for 3D robots to battle and earn $ROBO
           </Details>
