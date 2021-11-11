@@ -246,11 +246,11 @@ const Home = (props: HomeProps) => {
           return valid2DList.indexOf(address) > -1;
         })
 
-      console.log("bot addresses")
-      console.log(botAddresses)
-
-      console.log("token addresses")
-      console.log(tokenAddresses)
+      // console.log("bot addresses")
+      // console.log(botAddresses)
+      //
+      // console.log("token addresses")
+      // console.log(tokenAddresses)
 
       var numRobos = 0
 
@@ -266,8 +266,8 @@ const Home = (props: HomeProps) => {
         const metadata = await Metadata.load(props.connection, pdaAccount[0].toString());
 
 
-        console.log(metadata)
-        console.log(metadata.data.data.uri.toString())
+        // console.log(metadata)
+        // console.log(metadata.data.data.uri.toString())
 
         const arweaveData = await jQuery.getJSON(metadata.data.data.uri.toString())
         const arweaveDataName = arweaveData.name
