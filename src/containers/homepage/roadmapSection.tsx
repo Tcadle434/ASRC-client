@@ -168,7 +168,7 @@ export function RoadmapSection(props) {
         >
           <DetailsHeader className="vertical-timeline-element-title">$ROBO Launch</DetailsHeader>
           <Details>
-            Tokenomics finalized and launch of our in-game token
+            Tokenomics finalized and launch of our in-game token through an Earn-By-Staking NFT model
           </Details>
         </StyledVerticalTimelineElement>
 
