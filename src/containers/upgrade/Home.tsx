@@ -102,10 +102,11 @@ const DataContainer = styled.div`
 export const Details = styled.p`
   font-size: 20px;
   font-weight: 400;
-  color: #000000;
+  color: #FFFFFF;
   font-family: Share Tech Mono;
-  margin-left: 5%;
-  margin-right: 10%;
+  padding: 20px 20px;
+  margin-left: 20%;
+  margin-right: 20%;
 
 
   @media screen and (max-width: 480px) {
@@ -465,6 +466,14 @@ const UpgradeHome = (props: HomeProps) => {
 
           </BotContainer>
         )}
+        <Details> PLEASE READ: Once you have confirmed the upgrade transaction, please wait about 30 seconds and then REFRESH the website. 
+          Check your wallet and you will see your old 2D bot has been sent away to burn and your old USB drive has transformed into a new 3d bot
+        </Details>
+
+        <Details> If you fail to refresh and attempt to re-use a USB drive that no longer exists, it will overwrite your previously upgraded bot and you will lose that NFT.
+        This is a very rare case, but to be safe always REFRESH and allow your wallet to reconnect after each upgrade. This ensures the dropdown menu has the most recently updated list. 
+        Happy upgrading :)
+        </Details>
       </Heading>
     </main>
   );
