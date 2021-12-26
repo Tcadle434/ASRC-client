@@ -474,6 +474,9 @@ const UpgradeHome = (props: HomeProps) => {
         This is a very rare case, but to be safe always REFRESH and allow your wallet to reconnect after each upgrade. This ensures the dropdown menu has the most recently updated list. 
         Happy upgrading :)
         </Details>
+
+        <Details> 3D robots are tradeable on <a href = "https://www.magiceden.io/marketplace/anti_social_robot_club_3d"> Magic Eden </a>
+        </Details>
       </Heading>
     </main>
   );
