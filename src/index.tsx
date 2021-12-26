@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
 
+
 ReactDOM.render(
   <HttpsRedirect>
   <React.StrictMode>

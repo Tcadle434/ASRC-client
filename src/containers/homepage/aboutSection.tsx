@@ -11,6 +11,7 @@ import FourthBot from "../../assets/illustrations/3519.png";
 import UsbUp from "../../assets/illustrations/usb_up_no_background.png";
 import UsbDown from "../../assets/illustrations/usb_view_no_back.png";
 import ThreeDMoviePunch from "../../assets/videos/Tank_360_punching.mp4";
+import Fade from 'react-reveal/Fade';
 
 
 const AboutContainer = styled(Element)`
@@ -129,7 +130,7 @@ export function AboutSection(props) {
       <AboutContent> Although originally designed by humans, these bots turned to violence and quickly managed to overthrow their flesh covered overlords. This became known in legend as <span style={styles.blue}>R-DAY</span>. In the wake of victory, they took parts of the human brain and infused it into their own motherboards, deeming them the first robots with emotions </AboutContent>
       <AboutContent> This decision was followed by immediate regret as they were exposed to the realm of pain and sadness that burdens all living creatures. In an attempt to avoid these new feelings, they now wander the outskirts of the metaverse in isolation</AboutContent>
 
-
+      <Fade top>
       { !isMobile ? (
         <UsbContainer>
         <BotContainerRow>
@@ -152,7 +153,7 @@ export function AboutSection(props) {
         </BotContainerRow>
         </UsbContainer>
       )}
-
+      </Fade>
 
       <AboutTitle> 3D Upgrade </AboutTitle>
       <AboutContent> Ownership of one of the original 4,444 2D bots makes you elligible for a USB airdrop, giving you the option of upgrading your bot to a more menacing 3D version. When the robots undergo the upgrade, the 2D bot is <span style={styles.orange}>burned</span> thus making them <span style={styles.blue}>deflationary</span> </AboutContent>

@@ -153,9 +153,9 @@ export function RoadmapSection(props) {
           iconStyle={{ background: '#16B1F3', color: '#fff' }}
           icon={<ThreeDImg />}
         >
-          <DetailsHeader className="vertical-timeline-element-title">3D Upgrade + Public Mint</DetailsHeader>
+          <DetailsHeader className="vertical-timeline-element-title">3D Upgrade</DetailsHeader>
           <Details>
-            2D bots are available to upgrade on our site. An additional xxxx are released in a public sale
+            2D bots are available to upgrade on our site. Welcome the 3D metaverse ready robots of the ASRC
           </Details>
         </StyledVerticalTimelineElement>
 
@@ -166,7 +166,7 @@ export function RoadmapSection(props) {
           iconStyle={{ background: '#16B1F3', color: '#fff' }}
           icon={<CoinImg />}
         >
-          <DetailsHeader className="vertical-timeline-element-title">$ROBO Launch</DetailsHeader>
+          <DetailsHeader className="vertical-timeline-element-title">$ROBO Launch + Staking</DetailsHeader>
           <Details>
             Tokenomics finalized and launch of our in-game token through an Earn-By-Staking NFT model
           </Details>

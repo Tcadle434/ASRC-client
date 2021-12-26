@@ -62,6 +62,9 @@ export function OurNavbar(props) {
           <Link to="/mybots">
             <Button small> My Bots </Button>
           </Link>
+          <Link to="/upgrade">
+            <Button small> 3D Upgrade </Button>
+          </Link>
           <a href = {pdfFile}>
             <Button small> Litepaper </Button>
           </a>

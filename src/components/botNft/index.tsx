@@ -19,9 +19,27 @@ const BotContainer = styled.div`
 
 `;
 
+const BotContainerThree = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin: 20px;
+  width: 475px;
+
+
+  @media screen and (max-width: 480px) {
+  }
+
+`;
 
 const BotImg = styled.img`
   width: 15em;
+  height: 20em;
+`;
+
+const BotImgThree = styled.img`
+  width: 20em;
   height: 20em;
 `;
 
@@ -108,3 +126,14 @@ const { imgUrl, name, attributeArray} = props;
   );
 
 }
+
+export function BotNftThree(props) {
+  const { imgUrl } = props;
+  
+    return (
+          <BotContainerThree>
+            <BotImgThree src={imgUrl} />
+          </BotContainerThree>
+    );
+  
+  }

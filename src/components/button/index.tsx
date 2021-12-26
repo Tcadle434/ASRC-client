@@ -37,6 +37,30 @@ const ButtonWrapper = styled.button`
 }
 `;
 
+const ButtonWrapperUpgrade = styled.button`
+  padding: ${(p: Props) => p.small ? "16px 20px " : "16px 22px"};
+  border-radius: 5px;
+  background-color: #16B1F3;
+  color: #FFFFFF;
+  font-weight: normal;
+  font-size: 22px;
+  font-family: Share Tech Mono;
+  outline: none;
+  border: none;
+  transition: all 220ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    border: none;
+    color: #FFFFFF;
+  }
+
+`;
+
 export function Button(props) {
   return <ButtonWrapper {...props}>{props.children}</ButtonWrapper>;
+}
+
+export function ButtonUpgrade(props) {
+  return <ButtonWrapperUpgrade {...props}>{props.children}</ButtonWrapperUpgrade>;
 }

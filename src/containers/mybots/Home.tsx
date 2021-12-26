@@ -158,63 +158,6 @@ const Home = (props: HomeProps) => {
   const botData : BotType[] = [];
 
 
-//   const getMetadata = () => {
-//     (async () => {
-//
-//     if (!wallet) return;
-//
-//     if (botTokens) {
-//     for (const id of botTokens) {
-//       setIsLoaded(false);
-//
-//       const MINT_KEY = new anchor.web3.PublicKey(
-//         id
-//       );
-//       const pdaAccount = await anchor.web3.PublicKey.findProgramAddress([Buffer.from('metadata'), METADATA_PROGRAM_ID.toBuffer(),MINT_KEY.toBuffer()],METADATA_PROGRAM_ID)
-//
-//       const metadata = await Metadata.load(props.connection, pdaAccount[0].toString());
-//
-//
-//       console.log(metadata)
-//       console.log(metadata.data.data.uri.toString())
-//
-//       const arweaveData = await jQuery.getJSON(metadata.data.data.uri.toString())
-//       const arweaveDataName = arweaveData.name
-//       const arweaveDataAttributes = arweaveData.attributes
-//
-//       // const arweaveDataArray
-//       console.log("arweave data")
-//       console.log(arweaveData)
-//       console.log(arweaveData.image)
-//       console.log("name")
-//       console.log(arweaveDataName)
-//       console.log("attributes")
-//       console.log(arweaveDataAttributes)
-//
-//       botData.push(
-//         {
-//           name: arweaveDataName,
-//           uri: arweaveData.image.toString(),
-//           attributes: arweaveDataAttributes
-//         }
-//       )
-//
-//       console.log("BOT DATA ARRAY")
-//       console.log(botData)
-//
-//       png2DList.push(arweaveData.image.toString())
-//       setBotMetadataList(botData)
-//       setPngUriList(png2DList)
-//
-//
-//       console.log("2D list")
-//       console.log(png2DList)
-//   }}
-//
-//   })();
-// };
-
-
   useEffect(() => {
   (async () => {
     if (wallet) {
@@ -245,12 +188,6 @@ const Home = (props: HomeProps) => {
         .filter((address) => {
           return valid2DList.indexOf(address) > -1;
         })
-
-      // console.log("bot addresses")
-      // console.log(botAddresses)
-      //
-      // console.log("token addresses")
-      // console.log(tokenAddresses)
 
       var numRobos = 0
 
