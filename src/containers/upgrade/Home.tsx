@@ -156,6 +156,7 @@ const UpgradeHome = (props: HomeProps) => {
   const [robotCount, setRobotCount] = useState<number>();
   const [usbCount, setUsbCount] = useState<number>();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isFinished, setIsFinished] = useState(true);
   const [pngUriList, setPngUriList] = useState<any[]>();
   const [botMetadataList, setBotMetadataList] = useState<BotType[]>();
   const [botDropdownList, setBotDropdownList] = useState<BotDropdownType[]>();
@@ -184,6 +185,7 @@ const UpgradeHome = (props: HomeProps) => {
     console.log({connection, connectedWallet, to, token})
     console.log("Bot Name: ")
     console.log(botName)
+    setIsFinished(false);
     const mintPublicKey = new anchor.web3.PublicKey(token);
     const usbPublicKey = new anchor.web3.PublicKey(usbToken);
 
@@ -266,7 +268,9 @@ const UpgradeHome = (props: HomeProps) => {
         }
       ).then((e) => e.json());
 
-      console.log(response)
+      console.log(response);
+      setIsFinished(true);
+      window.location.reload();
   }
 
   useEffect(() => {
@@ -464,15 +468,15 @@ const UpgradeHome = (props: HomeProps) => {
               <ButtonUpgrade onClick={() => transferNft(props.connection, wallet, BURN_WALLET_ADDRESS, selectedLabel.toString(), new anchor.web3.PublicKey(selectedValue.toString()), new anchor.web3.PublicKey(usbSelectedValue.toString()))}>Upgrade</ButtonUpgrade>
             }
 
+            {wallet && isLoaded && botMetadataList && usbMetadataList && selectedValue && selectedLabel && usbSelectedValue && !isFinished && <CircularProgress /> }
+
           </BotContainer>
         )}
-        <Details> PLEASE READ: Once you have confirmed the upgrade transaction, please wait about 30 seconds and then REFRESH the website. 
+        <Details> PLEASE READ: Once you have confirmed the upgrade transaction, please wait about 30 seconds for the 3D robot to appear in your wallet. 
           Check your wallet and you will see your old 2D bot has been sent away to burn and your old USB drive has transformed into a new 3d bot
         </Details>
 
-        <Details> If you fail to refresh and attempt to re-use a USB drive that no longer exists, it will overwrite your previously upgraded bot and you will lose that NFT.
-        This is a very rare case, but to be safe always REFRESH and allow your wallet to reconnect after each upgrade. This ensures the dropdown menu has the most recently updated list. 
-        Happy upgrading :)
+        <Details> The upgrade process will force you to reconnect your wallet after each upgrade in order to maintain an updated list of usable bots + USBs
         </Details>
 
         <Details> 3D robots are tradeable on <a href = "https://www.magiceden.io/marketplace/anti_social_robot_club_3d"> Magic Eden </a>
