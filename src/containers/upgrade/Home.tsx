@@ -464,7 +464,7 @@ const UpgradeHome = (props: HomeProps) => {
             <BotNftThree imgUrl={ThreeDBotData[0][selectedLabel.match(/(\d+)/)[0].valueOf()]['imageLink']} />
             }
 
-            {wallet && isLoaded && botMetadataList && usbMetadataList && selectedValue && selectedLabel && usbSelectedValue &&
+            {wallet && isLoaded && botMetadataList && usbMetadataList && selectedValue && selectedLabel && usbSelectedValue && isFinished &&
               <ButtonUpgrade onClick={() => transferNft(props.connection, wallet, BURN_WALLET_ADDRESS, selectedLabel.toString(), new anchor.web3.PublicKey(selectedValue.toString()), new anchor.web3.PublicKey(usbSelectedValue.toString()))}>Upgrade</ButtonUpgrade>
             }
 
